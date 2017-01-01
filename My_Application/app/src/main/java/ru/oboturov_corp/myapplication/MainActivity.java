@@ -5,6 +5,8 @@ import android.os.Bundle;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,6 +37,14 @@ public class MainActivity extends AppCompatActivity {
             if (iterator.next() % 2 == 1) iterator.remove();
         }
 
+    }
+
+    public boolean check(String password) {
+
+        Pattern pt = Pattern.compile("[a-zA-Z^//s]{5,}");
+        Matcher m = pt.matcher(password);
+
+        return m.matches();
     }
 
 }
