@@ -10,4 +10,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+
+    public boolean isEqualse(String a, String b) {
+
+        boolean result;
+
+        if ((a == null && b != null) || (b == null && a != null)) {
+            result = false;
+        } else {
+            result = (a == null && b == null) || a.equals(b);
+        }
+
+        return result;
+    }
+
 }
