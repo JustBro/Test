@@ -3,6 +3,9 @@ package ru.oboturov_corp.myapplication;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import java.util.Iterator;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -22,6 +25,16 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return result;
+    }
+
+    public void sort(List<Integer> list) {
+
+        Iterator<Integer> iterator = list.iterator();
+
+        while (iterator.hasNext()) {
+            if (iterator.next() % 2 == 1) iterator.remove();
+        }
+
     }
 
 }
